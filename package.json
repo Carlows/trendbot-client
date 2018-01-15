@@ -4,9 +4,13 @@
   "private": true,
   "author": "Carlos Martinez <carlosjesus94@gmail.com>",
   "description": "Topic trend visualization for your company's Slack channels",
+  "scripts": {
+    "start": "hubot-dotenv -n trendbot --adapter slack"
+  },
   "dependencies": {
     "hubot": "^2.19.0",
     "hubot-diagnostics": "0.0.2",
+    "hubot-dotenv": "^1.0.0",
     "hubot-google-images": "^0.2.7",
     "hubot-google-translate": "^0.2.1",
     "hubot-help": "^0.2.2",
