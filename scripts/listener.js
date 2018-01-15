@@ -10,12 +10,11 @@ module.exports = (robot) => {
   // Listens for reactions
   // We're only looking for message.type === 'added'
   // message.reaction === 'smirk' => ':smirk:'
-  robot.react((res) => {
+  robot.react(async (res) => {
     const { channel } = res.message.item;
+    
+    const result = await robot.adapter.client.web.channels.info(channel);
 
-    robot.adapter.client.web.channels.info(channel)
-      .then((result) => {
-        console.log(res.message.user.name, result.channel.name, res.message.type, res.message.reaction);
-      });
+    console.log(res.message.user.name, result.channel.name, res.message.type, res.message.reaction);
   });
 };
